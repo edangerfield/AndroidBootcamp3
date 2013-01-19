@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="search_hint">Search by zipcode or city name</string>
+    <string name="app_name">Android3</string>
+	<string name="locale_label">Matching locales</string>
+	<string name="demo_label">Demographics</string>
+	<string name="Zip_label">Zipcode:</string>
+	<string name="City_label">City:</string>
+	<string name="State_label">State:</string>
+	<string name="population_label">Population:</string>
+	<string name="housing_label">Housing Units:</string>
+	<string name="income_label">Income:</string>
+	<string name="landarea_label">Land Area:</string>
+	<string name="waterarea_label">Water Area:</string>	
+	<string name="military_label">Military Restriction Codes:</string>
+	
+	
+</resources>

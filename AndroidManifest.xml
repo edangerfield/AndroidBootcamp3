@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bootcamp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="15" />	
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        
+        <uses-library android:name="com.google.android.maps"/>
+        
+        <activity
+            android:name=".InitSearchActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+ 			<meta-data android:name="android.app.default_searchable"
+        			   android:value=".SearchableActivity" />	
+        </activity>
+        <activity 
+            android:name=".SearchableActivity" 
+            android:label="@string/locale_label"
+            android:launchMode="singleTop">
+        	<intent-filter>
+            	<action android:name="android.intent.action.SEARCH" />
+        	</intent-filter>
+        	<meta-data android:name="android.app.searchable"
+                  	   android:resource="@xml/searchable"/>   
+    	</activity>
+    	<activity 
+    	    android:name=".SearchMapActivity" 
+    	    android:label="@string/app_name"
+     		android:theme="@android:style/Theme.NoTitleBar">
+        </activity>	
+        <activity 
+    	    android:name=".DemographicActivity" 
+    	    android:label="@string/demo_label">
+    	</activity>    
+        <provider android:name="com.bootcamp.providers.MyLocalContentProvider" 
+            android:authorities="com.bootcamp.providers.MyLocalContentProvider" />
+        <provider android:name="com.bootcamp.providers.MyDemographicContentProvider" 
+            android:authorities="com.bootcamp.providers.MyDemographicContentProvider" />
+                
+    </application>
+
+</manifest>
