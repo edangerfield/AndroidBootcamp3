@@ -1,16 +1,12 @@
 package com.bootcamp.util;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -56,12 +52,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		    //By calling this method and empty database will be created into the default system path
 		    //of your application. we are going to be able to overwrite that database with our database.
 		    this.getReadableDatabase();
-		     
-		    try {		     
-		    	copyDataBase();		     
-		    } catch (IOException e) {		     
-		    	throw new Error("Error copying database");		     
-		    }
+		    
+		    //load the database
+		    DatabaseLoader loader = new DatabaseLoader(myContext, DB_NAME, DB_PATH);
+		    loader.execute(new String[] {});		    	
 	    }     
     }
      
@@ -93,30 +87,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
       * system folder, from where it can be accessed and handled.
       * This is done by transfering bytestream.
       * */
-    private void copyDataBase() throws IOException{
-     
-	    //Open your local db as the input stream
-	    InputStream myInput = myContext.getAssets().open(DB_NAME);
-	     
-	    // Path to the just created empty db
-	    String outFileName = DB_PATH + DB_NAME;
-	     
-	    //Open the empty db as the output stream
-	    OutputStream myOutput = new FileOutputStream(outFileName);
-	     
-	    //transfer bytes from the inputfile to the outputfile
-	    byte[] buffer = new byte[1024];
-	    int length;
-	    while ((length = myInput.read(buffer))>0){
-	    	myOutput.write(buffer, 0, length);
-	    }
-	     
-	    //Close the streams
-	    myOutput.flush();
-	    myOutput.close();
-	    myInput.close();
-     
-    }
+//    private void copyDataBase() throws IOException{
+//     
+//	    //Open your local db as the input stream
+//	    InputStream myInput = myContext.getAssets().open(DB_NAME);
+//	     
+//	    // Path to the just created empty db
+//	    String outFileName = DB_PATH + DB_NAME;
+//	     
+//	    //Open the empty db as the output stream
+//	    OutputStream myOutput = new FileOutputStream(outFileName);
+//	     
+//	    //transfer bytes from the inputfile to the outputfile
+//	    byte[] buffer = new byte[1024];
+//	    int length;
+//	    while ((length = myInput.read(buffer))>0){
+//	    	myOutput.write(buffer, 0, length);
+//	    }
+//	     
+//	    //Close the streams
+//	    myOutput.flush();
+//	    myOutput.close();
+//	    myInput.close();
+//     
+//    }
      
     public void openDataBase() throws SQLException{
     
@@ -145,7 +139,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      
     }
      
-    // Add your public helper methods to access and get content from the database.
-    // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
-    // to you to create adapters for your views.
 }
