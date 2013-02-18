@@ -58,7 +58,7 @@ public class QueryDB extends AsyncTask<String, Void, String> {
 			uriViaQueryParam = MyLocalContentProvider.CONTENT_URI_LOC;
 		 				
 		ContentResolver resolver = searchableactivity.getContentResolver();
-		String[] projection = new String[]{"zipcodes.zipcodefull as _id","locations.city","locations.state","zipcodes.lat","zipcodes.long"};
+		String[] projection = new String[]{"zipcodes.zipcodefull as _id","zipcodes.zipcode","locations.locationid", "locations.city","locations.state","zipcodes.lat","zipcodes.long"};
 		cursor = resolver.query(uriViaQueryParam, projection, null, params, null);														
 				
 		Log.d("", "Exiting QueryDB.performQuery");

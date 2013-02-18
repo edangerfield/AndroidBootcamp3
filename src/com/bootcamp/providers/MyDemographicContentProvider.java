@@ -44,16 +44,33 @@ public class MyDemographicContentProvider extends ContentProvider {
 	    //String[] myProjection = {"zipcodefull as _id, population, housingunits, income, landarea, waterarea, militaryrestrictioncodes"};	    
 	    String[] myProjection = {"zipcodefull as _id, " +
 	    					     " CASE WHEN population='' THEN 'NA' ELSE population END AS population, " +
+	    					     " CASE WHEN lat='' THEN 'NA' ELSE lat END AS lat, " +
+	    					     " CASE WHEN long='' THEN 'NA' ELSE long END AS long, " +
 	    		                 " CASE WHEN housingunits='' THEN 'NA' ELSE housingunits END AS housingunits, " +
 	    					     " CASE WHEN income='' THEN 'NA' ELSE income END AS income, " + 
 	    		                 " CASE WHEN landarea='' THEN 'NA' ELSE landarea END AS landarea, " +
 	    					     " CASE WHEN waterarea='' THEN 'NA' ELSE waterarea END AS waterarea, " + 
-	    		                 " CASE WHEN militaryrestrictioncodes='' THEN 'NA' ELSE militaryrestrictioncodes END AS militaryrestrictioncodes"};
+	    		                 " CASE WHEN militaryrestrictioncodes='' THEN 'NA' ELSE militaryrestrictioncodes END AS militaryrestrictioncodes,"+
+	    		                 " CASE WHEN city='' THEN 'NA' ELSE city END AS city, " +
+	    		                 " CASE WHEN state='' THEN 'NA' ELSE state END AS state, " +
+	    		                 " CASE WHEN county='' THEN 'NA' ELSE county END AS county, " +
+	    		                 " CASE WHEN type='' THEN 'NA' ELSE type END AS type, " +
+	    		                 " CASE WHEN preferred='' THEN 'NA' ELSE preferred END AS preferred, " +
+	    		                 " CASE WHEN worldregion='' THEN 'NA' ELSE worldregion END AS worldregion, " +
+	    		                 " CASE WHEN country='' THEN 'NA' ELSE country END AS country, " +
+	    		                 " CASE WHEN locationtext='' THEN 'NA' ELSE locationtext END AS locationtext, " +
+	    		                 " CASE WHEN location='' THEN 'NA' ELSE location END AS location " 
+	    						};
 	    
 	    SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
-	    queryBuilder.setTables("zipcodes");
-	    queryBuilder.appendWhere("zipcodefull = '" + selectionArgs[0] + "'"); 	    						 	    						 
-	    	    
+	    //queryBuilder.setTables("zipcodes");
+	    //queryBuilder.appendWhere("zipcodefull = '" + selectionArgs[0] + "'"); 	    						 	    						 
+	    queryBuilder.setTables("zipcodes, xrefziploc, locations");
+	    queryBuilder.appendWhere("zipcodes.zipcode = xrefziploc.zipcode AND "+
+	    						 "xrefziploc.locationid = locations.locationid AND "+	
+	    						 "xrefziploc.zipcode = '" + selectionArgs[0] + "' AND " +
+	    						 "xrefziploc.locationid = '" + selectionArgs[1] + "'" );
+	    
 	    // execute the query.
 	    Cursor cursor = queryBuilder.query(db, myProjection, null, null, null, null, sortOrder);
 	    	    

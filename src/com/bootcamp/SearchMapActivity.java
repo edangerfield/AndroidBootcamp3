@@ -40,7 +40,9 @@ public class SearchMapActivity extends MapActivity{
 	    String latitude = intent.getStringExtra("latitude");
 	    String longitude = intent.getStringExtra("longitude");
 	    String city = intent.getStringExtra("city");
-	    String zipcodefull = intent.getStringExtra("zipcodefull");
+	    //String zipcodefull = intent.getStringExtra("zipcodefull");
+	    String zipcode = intent.getStringExtra("zipcode");
+	    String locationid = intent.getStringExtra("locationid");
 	    
 	    if (coordinatesAvailable(latitude,longitude)) {
 	    	//lat & long coordinates available
@@ -53,11 +55,11 @@ public class SearchMapActivity extends MapActivity{
 		    
 		    GeoPoint point = new GeoPoint((int)(latFloat * 1E6), (int)(longFloat * 1E6));
 		    mc.setCenter(point);
-		    OverlayItem item = new OverlayItem(point,city,zipcodefull);
+		    OverlayItem item = new OverlayItem(point,zipcode,locationid);
 		    mapItemizedOverlay.addOverlayItem(item);
 		    mapOverlays.add(mapItemizedOverlay);
 	    } else {
-	    	//lat/long coordinates not available for passed in local
+	    	//lat/long coordinates not available for passed in locale
 	    	String msg = "Latitude and Longitude coordinates are not available for selected local: " + city;
 	    	Toast.makeText(this.getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 	    }

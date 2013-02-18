@@ -28,6 +28,8 @@ public class MapHelper implements OnItemClickListener{
 		String longitude = cursor.getString(cursor.getColumnIndex("long"));
 		String city = cursor.getString(cursor.getColumnIndex("city"));
 		String zipcodefull = cursor.getString(cursor.getColumnIndex("_id"));
+		String zipcode = cursor.getString(cursor.getColumnIndex("zipcode"));
+		String locationid = cursor.getString(cursor.getColumnIndex("locationid"));
 		
 		//Toast.makeText(searchActivity.getApplicationContext(), combo, Toast.LENGTH_SHORT).show();
 		
@@ -36,6 +38,8 @@ public class MapHelper implements OnItemClickListener{
 		intent.putExtra("longitude",longitude);
 		intent.putExtra("city",city);
 		intent.putExtra("zipcodefull",zipcodefull);
+		intent.putExtra("zipcode",zipcode);
+		intent.putExtra("locationid",locationid);
 		searchActivity.startActivity(intent);
 	}
 

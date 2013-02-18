@@ -20,8 +20,9 @@ public class DemographicActivity extends ListActivity {
 		
 		//obtain zipcode
 		Intent intent = getIntent();
-		String zipcodefull = intent.getStringExtra("zipcodefull");
-		String[] params = {zipcodefull};
+		String zipcode = intent.getStringExtra("zipcode");
+		String locationid = intent.getStringExtra("locationid");
+		String[] params = {zipcode,locationid};
 		
 		//invoke query for demographics
 		ContentResolver resolver = this.getContentResolver();
@@ -29,8 +30,8 @@ public class DemographicActivity extends ListActivity {
 		
 		//bind cursor to activity
 		this.startManagingCursor(cursor);
-		String[] from = new String[] {"population","housingunits","income","landarea","waterarea","militaryrestrictioncodes"};
-		int[] to = new int[]{R.id.population,R.id.housing,R.id.income,R.id.landarea,R.id.waterarea,R.id.military};
+		String[] from = new String[] {"population","lat","long","housingunits","income","landarea","waterarea","militaryrestrictioncodes","city","state","county","type","preferred","worldregion","country","locationtext","location"};
+		int[] to = new int[]{R.id.population,R.id.latitude, R.id.longitude, R.id.housing,R.id.income,R.id.landarea,R.id.waterarea,R.id.military,R.id.city,R.id.state,R.id.county,R.id.type,R.id.preferred,R.id.worldregion,R.id.country,R.id.locationtext,R.id.location} ;
 		SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(this, R.layout.demographics, cursor, from, to);
 		this.setListAdapter(cursorAdapter);	
 		

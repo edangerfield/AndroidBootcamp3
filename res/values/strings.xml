@@ -14,6 +14,16 @@
 	<string name="landarea_label">Land Area:</string>
 	<string name="waterarea_label">Water Area:</string>	
 	<string name="military_label">Military Restriction Codes:</string>
-	
+	<string name="city_label">City:</string>
+	<string name="state_label">State:</string>
+	<string name="county_label">County:</string>
+	<string name="type_label">Type:</string>
+	<string name="preferred_label">Preferred:</string>
+	<string name="worldregion_label">World Region:</string>
+	<string name="country_label">Country:</string>
+	<string name="locationtext_label">Location text:</string>
+	<string name="location_label">Location:</string>
+	<string name="lat_label">Latitude:</string>
+	<string name="long_label">Longitude:</string>
 	
 </resources>

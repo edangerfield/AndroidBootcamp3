@@ -41,20 +41,18 @@ public class MapItemizedOverlay extends ItemizedOverlay {
 		
 		if (myContext !=null) {
 			
-			//obtain zipcode of tapped item
+			//obtain zipcode and locationid of tapped item
 			OverlayItem item = overlayList.get(index);
-			String zipcodefull = item.getSnippet();
+			String zipcode = item.getTitle();
+			String locationid = item.getSnippet();
 			
 			//start Demographic activity, passing in zipcode
 			SearchMapActivity mapActivity = (SearchMapActivity)myContext;			
 			Intent intent = new Intent(mapActivity, DemographicActivity.class);
-			intent.putExtra("zipcodefull",zipcodefull);
+			intent.putExtra("zipcode",zipcode);
+			intent.putExtra("locationid",locationid);
 			mapActivity.startActivity(intent);
 			
-//			AlertDialog.Builder dialog = new AlertDialog.Builder(myContext);
-//			OverlayItem item = overlayList.get(index);
-//			dialog.setTitle(item.getTitle());
-//			dialog.show();
 		}
 		return true;
 	}

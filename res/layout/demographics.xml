@@ -17,7 +17,36 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content" />    
 	</LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >
+	    <TextView
+	        android:text="@string/lat_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/> 
+		<TextView
+			android:id="@+id/latitude"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" />    
+	</LinearLayout>
 	
+        
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >
+	    <TextView
+	        android:text="@string/long_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/> 
+		<TextView
+			android:id="@+id/longitude"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" />    
+	</LinearLayout>
+	    	
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="horizontal"
 	    android:layout_width="fill_parent"
@@ -88,4 +117,130 @@
 			android:layout_height="wrap_content" /> 	 
 	</LinearLayout>		
 	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/city_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/city"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/state_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/state"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/county_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/county"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/type_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/type"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/preferred_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/preferred"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/worldregion_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/worldregion"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/country_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/country"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/locationtext_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/locationtext"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" >	
+		<TextView
+			android:text="@string/location_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+		<TextView
+			android:id="@+id/location"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" /> 	 
+	</LinearLayout>	
+		
 </LinearLayout>

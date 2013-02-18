@@ -16,17 +16,28 @@ public final class R {
         public static final int location_place=0x7f020002;
     }
     public static final class id {
-        public static final int City=0x7f070008;
-        public static final int State=0x7f070009;
-        public static final int Zip=0x7f070007;
-        public static final int housing=0x7f070001;
-        public static final int income=0x7f070002;
-        public static final int landarea=0x7f070003;
-        public static final int mapview=0x7f070006;
-        public static final int menu_search=0x7f07000a;
-        public static final int military=0x7f070005;
+        public static final int City=0x7f070013;
+        public static final int State=0x7f070014;
+        public static final int Zip=0x7f070012;
+        public static final int city=0x7f070008;
+        public static final int country=0x7f07000e;
+        public static final int county=0x7f07000a;
+        public static final int housing=0x7f070003;
+        public static final int income=0x7f070004;
+        public static final int landarea=0x7f070005;
+        public static final int latitude=0x7f070001;
+        public static final int location=0x7f070010;
+        public static final int locationtext=0x7f07000f;
+        public static final int longitude=0x7f070002;
+        public static final int mapview=0x7f070011;
+        public static final int menu_search=0x7f070015;
+        public static final int military=0x7f070007;
         public static final int population=0x7f070000;
-        public static final int waterarea=0x7f070004;
+        public static final int preferred=0x7f07000c;
+        public static final int state=0x7f070009;
+        public static final int type=0x7f07000b;
+        public static final int waterarea=0x7f070006;
+        public static final int worldregion=0x7f07000d;
     }
     public static final class layout {
         public static final int demographics=0x7f030000;
@@ -43,15 +54,26 @@ public final class R {
         public static final int State_label=0x7f050006;
         public static final int Zip_label=0x7f050004;
         public static final int app_name=0x7f050001;
+        public static final int city_label=0x7f05000d;
+        public static final int country_label=0x7f050013;
+        public static final int county_label=0x7f05000f;
         public static final int demo_label=0x7f050003;
         public static final int housing_label=0x7f050008;
         public static final int income_label=0x7f050009;
         public static final int landarea_label=0x7f05000a;
+        public static final int lat_label=0x7f050016;
         public static final int locale_label=0x7f050002;
+        public static final int location_label=0x7f050015;
+        public static final int locationtext_label=0x7f050014;
+        public static final int long_label=0x7f050017;
         public static final int military_label=0x7f05000c;
         public static final int population_label=0x7f050007;
+        public static final int preferred_label=0x7f050011;
         public static final int search_hint=0x7f050000;
+        public static final int state_label=0x7f05000e;
+        public static final int type_label=0x7f050010;
         public static final int waterarea_label=0x7f05000b;
+        public static final int worldregion_label=0x7f050012;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;
